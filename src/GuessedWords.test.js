@@ -19,6 +19,7 @@ const setup = (props = {}) => {
     ...defaultProps,
     ...props
   }
+
   return shallow(<GuessedWords { ...setupProps } />)
 }
 
