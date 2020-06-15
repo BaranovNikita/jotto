@@ -9,6 +9,29 @@ export const GuessedWords = (props) => {
         Try to guess the secret word!
       </span>
     )
+  } else {
+    contents = (
+      <div data-test='guessed-words'>
+        <h3>Words</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Guess</th>
+              <th>Matching Letters</th>
+            </tr>
+          </thead>
+          <tbody>
+          {props.guessedWords.map((gw, idx) => (
+            <tr data-test='guessed-word' key={idx}>
+              <td>{gw.guessedWord}</td>
+              <td>{gw.letterMatchCount}</td>
+            </tr>
+          ))}
+          </tbody>
+        </table>
+
+      </div>
+    )
   }
   return (
     <div data-test='component-guessed-words'>
